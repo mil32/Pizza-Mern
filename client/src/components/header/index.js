@@ -1,9 +1,10 @@
+
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import style from './css/header.module.scss';
-import logoWhite from '../images/logo-white.svg';
+import style from './header.module.scss';
+import logoWhite from '../../images/logo-white.svg';
 
-import {container, flex} from '../css/layout.module.scss';
+import {container, flex} from '../../css/layout.module.scss';
 
 class Header extends Component {
     state = {  }
