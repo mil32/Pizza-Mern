@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import Input from './elements/input/'
+
 class createForm extends Component {
     constructor(props) {
         super(props);
@@ -36,10 +38,11 @@ class createForm extends Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <input type="text" name="name" placeholder="Name" onChange={this.handleChange} required />
-                    <input type="text" name="ingredients" placeholder="Ingredients" onChange={this.handleChange} required/>
-                    <input type="text" name="description" placeholder="Description" onChange={this.handleChange} required/>
-                    <input type="number" name="price" min="0" placeholder="Price" onChange={this.handleChange}  required/>
+                    <Input label="Pizza Name" name="name" onChange={this.handleChange} required="required"/>
+                    <Input label="Ingredients" name="ingredients" onChange={this.handleChange} required="required"/>
+                    <Input label="Description" name="description" onChange={this.handleChange} required="required"/>
+                    <Input label="Price" name="price" onChange={this.handleChange} required="required"/>
+                    {/* 
                     <button type="submit" >ENVIAR</button>
                 </form>
             </div>
