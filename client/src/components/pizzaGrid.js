@@ -1,46 +1,16 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React from 'react';
 import layout from '../css/layout.module.scss';
-
 import PizzaCard from './productCard/pizzaCard';
 
-class pizzaGrid extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { loading:true, products:[]}
-    }
-
-    componentDidMount(){
-        this.setProducts();
-    }
-    
-    // toggleLoading = ()=>{
-    //     this.setState((prevState) =>( {
-    //         ...this.state,
-    //         loading: !prevState.loading,
-    //     }))
-    // }
-
-    setProducts = async () => {
-        const res = await axios.get('/api/pizzas');
-        this.setState({
-            loading: false,
-            products: res.data
-        })  
-    }
-
-    render() { 
-        const {products, loading} = this.state;
+export default function pizzaGrid(props) {
+    const {products, loading} = props;
         return ( 
            <div className={layout.productGrid}>
                 {
                     products.length >0 ?
-                    products.map(prod => ( <PizzaCard data={prod} />))
+                    products.map((prod,i) => ( <PizzaCard data={prod} key={i} />))
                     : ""
                 }
             </div>
          );
-    }
 }
- 
-export default pizzaGrid;

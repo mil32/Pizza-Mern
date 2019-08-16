@@ -14,9 +14,9 @@ function pizzaCard(props)  {
                     <p>{ingredients.map( (item, index) => (index ? ', ' : '') + item ) } </p>
                     <p>{description}</p>
                     <div className={style.price}>{`$ ${price}`}</div>
-                    <Button onClick="" type="primary" color="success"> Pedir </Button>
-                    <Button onClick="" type="secondary" color="alert"> Pedir </Button>
-                    <Button onClick="" type="tertiary" > Ayuda </Button> 
+                    <Button /* onClick="" */ type="primary" color="success"> Pedir </Button>
+                    <Button /* onClick="" */ type="secondary" color="alert"> Pedir </Button>
+                    <Button /* onClick="" */ type="tertiary" > Ayuda </Button> 
 
                 </div>
             </div>
